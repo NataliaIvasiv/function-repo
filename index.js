@@ -1,8 +1,10 @@
-const formatMessage = message => {
+const formatMessage = (message, maxLength) => {
   const stringLength = message.length;
-  return stringLength;
+  if (stringLength > maxLength) {
+    return `${message.slice(0, maxLength)}...`;
+  } else return message;
 };
-console.log(formatMessage('Curabitur ligula sapien')); // "Curabitur ligula..."
+console.log(formatMessage('Curabitur ligula sapien', 16)); // "Curabitur ligula..."
 console.log(formatMessage('Curabitur ligula sapien', 23)); // "Curabitur ligula sapien"
 console.log(formatMessage('Vestibulum facilisis purus nec', 20)); // "Vestibulum facilisis..."
 console.log(formatMessage('Vestibulum facilisis purus nec', 30)); // "Vestibulum facilisis purus nec"
