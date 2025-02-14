@@ -1,12 +1,4 @@
-const formatMessage = (message, maxLength) => {
-  const stringLength = message.length;
-  if (stringLength > maxLength) {
-    return `${message.slice(0, maxLength)}...`;
-  } else return message;
-};
-console.log(formatMessage('Curabitur ligula sapien', 16)); // "Curabitur ligula..."
-console.log(formatMessage('Curabitur ligula sapien', 23)); // "Curabitur ligula sapien"
-console.log(formatMessage('Vestibulum facilisis purus nec', 20)); // "Vestibulum facilisis..."
-console.log(formatMessage('Vestibulum facilisis purus nec', 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15)); // "Nunc sed turpis..."
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41)); // "Nunc sed turpis a felis in nunc fringilla"
+console.log(slugify('Arrays for beginners')); // "arrays-for-beginners"
+console.log(slugify('English for developer')); // "english-for-developer"
+console.log(slugify('Ten secrets of JavaScript')); // "ten-secrets-of-javascript"
+console.log(slugify('How to become a JUNIOR developer in TWO WEEKS')); // "how-to-become-a-junior-developer-in-two-weeks"
