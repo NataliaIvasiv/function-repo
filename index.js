@@ -1,15 +1,13 @@
-const filterArray = (numbers, value) => {
-  const newAr = [];
-  for (number of numbers) {
-    if (number > value) {
-      newAr.push(number);
-    }
-  }
-  return newAr;
+const book = {
+  title: 'The Last Kingdom',
+  author: 'Bernard Cornwell',
+  genres: ['historical prose', 'adventure'],
+  rating: 8.38,
 };
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+const propertyB = Object.keys(book);
+
+for (const key of propertyB) {
+  console.log(propertyB);
+  console.log(book[key]);
+}
