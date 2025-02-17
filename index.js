@@ -1,16 +1,16 @@
-const colors = [
-  { hex: '#f44336', rgb: '244,67,54' },
-  { hex: '#2196f3', rgb: '33,150,243' },
-  { hex: '#4caf50', rgb: '76,175,80' },
-  { hex: '#ffeb3b', rgb: '255,235,59' },
-];
+const isEnoughCapacity = (products, containerSize) => {
+  let totalSum = 0;
+  const values = Object.values(products);
+  for (let value of values) {
+    totalSum += value;
+  }
+  return totalSum <= containerSize;
+};
 
-const hexColors = [];
-const rgbColors = [];
-for (const color of colors) {
-  hexColors.push(color.hex);
-  rgbColors.push(color.rgb);
-}
+console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
 
-console.log(hexColors);
-console.log(rgbColors);
+console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+
+console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+
+console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
