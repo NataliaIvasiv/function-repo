@@ -1,16 +1,10 @@
-const isEnoughCapacity = (products, containerSize) => {
-  let totalSum = 0;
-  const values = Object.values(products);
-  for (let value of values) {
-    totalSum += value;
-  }
-  return totalSum <= containerSize;
-};
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
 
-console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+  orderedItems.forEach(function (number) {
+    totalPrice += number;
+  });
 
-console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
-
-console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
-
-console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+  return totalPrice;
+}
+console.log(calculateTotalPrice([12, 85, 37, 4]));
