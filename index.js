@@ -1,24 +1,9 @@
-const singleBtn = document.querySelector('#single');
+const button = document.querySelector('.btn');
 
-const handleClick = () => {
-  console.log('click event listener callback');
+const handleClick = event => {
+  console.log('event: ', event);
+  console.log('event type: ', event.type);
+  console.log('currentTarget: ', event.currentTarget);
 };
 
-singleBtn.addEventListener('click', handleClick);
-
-// ===============================================
-const multiBtn = document.querySelector('#multiple');
-
-const firstCallback = () => {
-  console.log('First callback!');
-};
-const secondCallback = () => {
-  console.log('Second callback!');
-};
-const thirdCallback = () => {
-  console.log('Third callback!');
-};
-
-multiBtn.addEventListener('click', firstCallback);
-multiBtn.addEventListener('click', secondCallback);
-multiBtn.addEventListener('click', thirdCallback);
+button.addEventListener('click', handleClick);
