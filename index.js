@@ -7,4 +7,4 @@ const markup = technologies
 
 console.log(markup);
 
-list.innerHTML = markup;
+list.insertAdjacentHTML('beforeend', markup);
