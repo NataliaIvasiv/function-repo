@@ -1,15 +1,19 @@
-const select = document.querySelector('.pizza-select');
-const textOutput = document.querySelector('.text-output');
-const valueOutput = document.querySelector('.value-output');
+const textInput = document.querySelector('.text-input');
+const setFocusBtn = document.querySelector('[data-action="set"]');
+const removeFocusBtn = document.querySelector('[data-action="remove"]');
 
-select.addEventListener('change', setOutput);
+setFocusBtn.addEventListener('click', () => {
+  textInput.focus();
+});
 
-function setOutput(event) {
-  const selectedOptionValue = event.currentTarget.value;
-  const selectedOptionIndex = event.currentTarget.selectedIndex;
-  const selectedOptionText =
-    event.currentTarget.options[selectedOptionIndex].text;
+removeFocusBtn.addEventListener('click', () => {
+  textInput.blur();
+});
 
-  textOutput.textContent = selectedOptionText;
-  valueOutput.textContent = selectedOptionValue;
-}
+textInput.addEventListener('focus', () => {
+  textInput.value = 'This input has focus';
+});
+
+textInput.addEventListener('blur', () => {
+  textInput.value = 'blur';
+});
