@@ -1,9 +1,15 @@
-const button = document.querySelector('.btn');
+const select = document.querySelector('.pizza-select');
+const textOutput = document.querySelector('.text-output');
+const valueOutput = document.querySelector('.value-output');
 
-const handleClick = event => {
-  console.log('event: ', event);
-  console.log('event type: ', event.type);
-  console.log('currentTarget: ', event.currentTarget);
-};
+select.addEventListener('change', setOutput);
 
-button.addEventListener('click', handleClick);
+function setOutput(event) {
+  const selectedOptionValue = event.currentTarget.value;
+  const selectedOptionIndex = event.currentTarget.selectedIndex;
+  const selectedOptionText =
+    event.currentTarget.options[selectedOptionIndex].text;
+
+  textOutput.textContent = selectedOptionText;
+  valueOutput.textContent = selectedOptionValue;
+}
