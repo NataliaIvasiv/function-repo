@@ -1,19 +1,7 @@
-const textInput = document.querySelector('.text-input');
-const setFocusBtn = document.querySelector('[data-action="set"]');
-const removeFocusBtn = document.querySelector('[data-action="remove"]');
-
-setFocusBtn.addEventListener('click', () => {
-  textInput.focus();
-});
-
-removeFocusBtn.addEventListener('click', () => {
-  textInput.blur();
-});
-
-textInput.addEventListener('focus', () => {
-  textInput.value = 'This input has focus';
-});
-
-textInput.addEventListener('blur', () => {
-  textInput.value = 'blur';
-});
+const lists = document.querySelectorAll('.item');
+console.log(lists.length);
+console.log(lists);
+for (let list of lists) {
+  console.log(list.firstElementChild.textContent);
+  console.log(list.lastElementChild.children.length);
+}
