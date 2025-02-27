@@ -10,21 +10,21 @@
 //   }
 // });
 
-const form = document.querySelector('.login-form');
-//console.log(form);
-
-form.addEventListener('submit', submitHandler);
-function submitHandler(e) {
-  e.preventDefault();
-  const email = e.target.elements.email.value;
-  const password = e.target.elements.password.value;
-  let objectName = {};
-  if (email === '' || password === '') {
-    alert('fill in!');
-  } else {
-    objectName.login = email;
-    objectName.keyWord = password;
-    console.log(objectName);
-  }
-  e.target.reset;
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
+
+const changeBTN = document.querySelector('.change-color');
+console.log(changeBTN);
+const widget = document.querySelector('.widget');
+const color = document.querySelector('.color');
+
+function handleClick(event) {
+  let randomColor = getRandomHexColor();
+  widget.style.backgroundColor = randomColor;
+  console.log(randomColor);
+  color.textContent = randomColor;
+}
+changeBTN.addEventListener('click', handleClick);
