@@ -10,21 +10,32 @@
 //   }
 // });
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
 
-const changeBTN = document.querySelector('.change-color');
-console.log(changeBTN);
-const widget = document.querySelector('.widget');
-const color = document.querySelector('.color');
+// const changeBTN = document.querySelector('.change-color');
+// console.log(changeBTN);
+// const widget = document.querySelector('.widget');
+// const color = document.querySelector('.color');
 
-function handleClick(event) {
-  let randomColor = getRandomHexColor();
-  widget.style.backgroundColor = randomColor;
-  console.log(randomColor);
-  color.textContent = randomColor;
-}
-changeBTN.addEventListener('click', handleClick);
+// function handleClick(event) {
+//   let randomColor = getRandomHexColor();
+//   widget.style.backgroundColor = randomColor;
+//   console.log(randomColor);
+//   color.textContent = randomColor;
+// }
+// changeBTN.addEventListener('click', handleClick);
+
+const instance = basicLightbox.create(`
+    <div class="modal">
+        <p>
+            Your first lightbox with just a few lines of code.
+            Yes, it's really that simple.
+        </p>
+    </div>
+`);
+
+instance.show();
