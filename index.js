@@ -29,13 +29,15 @@
 // }
 // changeBTN.addEventListener('click', handleClick);
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
-    </div>
-`);
+const form = document.querySelector('.feedback-form');
+const localStorageKey = 'goit-example-message';
 
-instance.show();
+form.addEventListener('input', evt => {
+  localStorage.setItem(localStorageKey, evt.target.value);
+});
+
+form.addEventListener('submit', evt => {
+  evt.preventDefault();
+  console.log(evt.target.elements.message.value);
+  form.reset();
+});
